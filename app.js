@@ -10,8 +10,8 @@ search.addEventListener('click', () =>{
 
     if (city === '')
         return;
-        fetch(`https://api.openweathermap.org/data/2.5/weather?=q${city}
-        &units=metric&appid=${API_Key}`).then(repsonse => response.json()).then
+        fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}
+        &units=imperial&appid=${API_Key}`).then(response => response.json()).then
         (json => {
 
             if(json.cod === '404'){
@@ -29,12 +29,44 @@ search.addEventListener('click', () =>{
             const image = document.querySelector('.weather-box img');
             const temperature = document.querySelector('.weather-box .temperature');
             const description = document.querySelector('.weather-box .description');
-            const humidity = document.querySelector('.weather-details .humdity span');
+            const humidity = document.querySelector('.weather-details .humidity span');
             const wind = document.querySelector('.weather-details .wind span');
 
-            swith (json.weather[0].main){
+            switch (json.weather[0].main){
                 case 'Clear':
-                    image.src = 'images/clear.png'
+                    image.src = 'images/clearsky.png';
+                    break;
+
+                case 'Rain':
+                    image.src = 'images/lightrain.png';
+                    break;
+                
+                case 'Snow':
+                    image.src = 'images/snowing.png';
+                    break;
+                
+                case 'Clouds':
+                    image.src = 'images/cloudy.png';
+                    break;
+                    
+                case 'Thunderstorm':
+                    image.src = 'images/thunderstorm.png';
+                    break;
+                
+                default:
+                    image.src = '';
             }
+
+            temperature.innerHTML = `${parseInt(json.main.temp)}<span>°F</span>`;
+            description.innerHTML = `${json.weather[0].description}`;
+            humidity.innerHTML = `${json.main.humidity}%`;
+            wind.innerHTML = `${parseInt(json.wind.speed)}mph`;
+
+            weatherBox.style.display = '';
+            weatherDetails.style.display = '';
+            weatherBox.classList.add('fadeIn');
+            weatherDetails.classList.add('fadeIn');
+            container.style.height = '590px';
+
         });
-}
+});
