@@ -12,13 +12,13 @@
     <h1>This will be my Weather Widget</h1>
     <div class="container">
         <div class="search-box">
-            <span class="loc-dot"><img src="images/location-dot-solid.svg"></span>
+            <i class="fa-solid fa-location-dot"></i>
             <input type="text" placeholder="Enter your location" name="location" id="location">
-            <button><img src="images/magnifying-glass-solid.svg"></button>
+            <button class="fa-solid fa-magnifying-glass"></button>
         </div>
         <div class="not-found">
             <img class="error404" src="images/404.png" alt="404 error">
-            <p>Oof! Invalid Location! :/ That place doesn't exist, you must be from Narnia, or you're just fuckin stupid. Get your shit together and learn how to spell god damn it!!</p>
+            <p>Oof! Invalid Location! :/ That place doesn't exist. You must be from Narnia, or you're just fuckin stupid. Get your shit together and learn how to spell god damn it!!</p>
         </div>
 
         <div class="weather-box">
@@ -27,21 +27,23 @@
             <p class="description"></p>
         </div>
         <div class="weather-details">
-            <div class="humidity"></div>
-            <span class="water"><img src="images/water-solid.svg" alt="water icon"></span>
-            <div class="text">
-                <span></span>
-                <p>Humidity</p>
+            <div class="humidity">
+                <i class="fa-solid fa-water"></i>
+                <div class="text">
+                    <span></span>
+                    <p>Humidity</p>
+                </div>
             </div>
-            <div class="wind"></div>
-            <span class="wind"><img src="images/wind-solid.svg" alt="water icon"></span>
-            <div class="text">
-                <span></span>
-                <p>Wind Speed</p>
+            <div class="wind">
+                <i class="fa-solid fa-wind"></i>
+                <div class="text">
+                    <span></span>
+                    <p>Wind Speed</p>
+                </div>
             </div>
         </div>
     </div>
-    <div class="search-box"></div>
+   
     <script src="https://kit.fontawesome.com/6561d849e0.js" crossorigin="anonymous"></script>
 
     <script src="app.js"></script>
