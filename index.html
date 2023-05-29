@@ -6,10 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sloth's Weather Widget</title>
     <link rel="stylesheet" style="text/css" href="styles.css">
+    
 </head>
 <body>
     <h1>This will be my Weather Widget</h1>
-    
+    <div class="container">
+        <div class="search-box">
+            <span class="loc-dot"><img src="images/location-dot-solid.svg"></span>
+            <input type="text" placeholder="Enter your location" name="location" id="location">
+            <button><img src="images/magnifying-glass-solid.svg"></button>
+        </div>
+        <div class="not-found">
+            <img class="error404" src="images/404.png" alt="404 error">
+            <p>Oof! Invalid Location! :/ That place doesn't exist, you must be from Narnia, or you're just fuckin stupid. Get your shit together and learn how to spell god damn it!!</p>
+        </div>
+    </div>
+    <div class="search-box"></div>
+    <script src="https://kit.fontawesome.com/6561d849e0.js" crossorigin="anonymous"></script>
+
     <script src="app.js"></script>
 </body>
 </html>
